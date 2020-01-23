@@ -1,25 +1,43 @@
 import React from 'react';
-import { createAppContainer } from 'react-navigation';
+import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import Home from './components/Home';
 import Details from './components/Details/';
-import Login from './components/login/Login';
+import { Provider } from 'react-redux';
+import { store } from './reducer/reducer';
+import AuthLoadingScreen from './components/Auth/Login';
+import Login from './components/Auth/Login';
+import Register from './components/Auth/Register';
 
-const RootNavigator = createStackNavigator(
-  {
-    Home: Home,
-    Details: Details,
-    Login: Login
-  },
-  {
-    initialRouteName: 'Home'
-  }
+const AppStack = createStackNavigator({
+  Home: Home,
+  Details: Details
+});
+
+const AuthStack = createStackNavigator({
+  Register: Register,
+  Login: Login
+});
+
+const AppContainer = createAppContainer(
+  createSwitchNavigator(
+    {
+      AuthLoading: AuthLoadingScreen,
+      App: AppStack,
+      Auth: AuthStack
+    },
+    {
+      initialRouteName: 'AuthLoading'
+    }
+  )
 );
 
-const AppContainer = createAppContainer(RootNavigator);
-
 const App = () => {
-  return <AppContainer />;
+  return (
+    <Provider store={store}>
+      <AppContainer />
+    </Provider>
+  );
 };
 
 export default App;

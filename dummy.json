@@ -1,0 +1,23 @@
+{
+  "apiKey": "AIzaSyDWeIRYIZ4SRijKhmyx-MUgEETP1t62Gfw",
+  "appName": "[DEFAULT]",
+  "authDomain": "expo-test-74dc4.firebaseapp.com",
+  "createdAt": "1579742185737",
+  "displayName": null,
+  "email": null,
+  "emailVerified": false,
+  "isAnonymous": true,
+  "lastLoginAt": "1579742185737",
+  "phoneNumber": null,
+  "photoURL": null,
+  "providerData": [],
+  "redirectEventId": null,
+  "stsTokenManager": {
+    "accessToken": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImU1YTkxZDlmMzlmYTRkZTI1NGExZTg5ZGYwMGYwNWI3ZTI0OGI5ODUiLCJ0eXAiOiJKV1QifQ.eyJwcm92aWRlcl9pZCI6ImFub255bW91cyIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9leHBvLXRlc3QtNzRkYzQiLCJhdWQiOiJleHBvLXRlc3QtNzRkYzQiLCJhdXRoX3RpbWUiOjE1Nzk3NDIxODUsInVzZXJfaWQiOiJlNGRJT2h4bFptUXlLWkh6U3k1QXhzSWRrVWkxIiwic3ViIjoiZTRkSU9oeGxabVF5S1pIelN5NUF4c0lka1VpMSIsImlhdCI6MTU3OTc0MjE4NSwiZXhwIjoxNTc5NzQ1Nzg1LCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7fSwic2lnbl9pbl9wcm92aWRlciI6ImFub255bW91cyJ9fQ.BlVHC3TUxb1xLea2kpcdPwnMozHv2V62B2acW3f1HeRu1pQuciR_IJuZNCo4yam_zCVAUZhyD5l8Uboa4_QGNmXUaSFE3VMm0Duoz-bY6TKuYQkxM0I6DLwhbBQ_YqTWO6QN5bxznxmpm2P7t4W8qJ6tFOO-wq00EBOAo6X4LpE-HpGA0_5oecSy7QXwrwzGzmBNrcxt7iRiHsBJDCiSb78Vf_a5jl0rTT6L7TXawY0DlqL1wDokL5VU4XAg_2WiznUeAwmcfrLvNArhhwfjWPQ6MVIoV2P7OtybdiUGMnDxXNNrgSUWNNno0uG5qMzRW3WfiZrdxoqiWSIfzJdCGA",
+    "apiKey": "AIzaSyDWeIRYIZ4SRijKhmyx-MUgEETP1t62Gfw",
+    "expirationTime": 1579745781749,
+    "refreshToken": "AEu4IL1kpK6Pfh9IKms8oWgR70tV_KUksg89AIBQB0D1rta9d8562_cb-skwTin8dEcSuihbVLgUEv6VCO2IXO7GYC_nhCgurd4nFfPk2NQaG3V7WAwpyH4F6DHWISszC0D57o7Q0JQAxw7U_ZOJt1_BaufLiZlk_mdMAoH-2rUND0C5MSwTValIvzOIpaNRZh8kY-LgFtOU",
+  },
+  "tenantId": null,
+  "uid": "e4dIOhxlZmQyKZHzSy5AxsIdkUi1"
+}
