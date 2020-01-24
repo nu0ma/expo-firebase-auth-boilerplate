@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Text, StyleSheet } from 'react-native';
-import { Container, Button } from 'native-base';
+import { StyleSheet } from 'react-native';
+import { Container, Button, Text } from 'native-base';
 import firebase from '../../firebase';
 import Form from '../Details/Form';
 import { setUser, clearUser } from '../../reducer/actions';
@@ -27,7 +27,9 @@ const HomeScreen = ({ navigation }) => {
     <Container style={styles.container}>
       <Text>WelCome</Text>
       <Button
-        small
+        rounded
+        info
+        style={styles.button}
         onPress={() => {
           navigation.navigate('Details', {
             itemId: 86,
@@ -35,11 +37,11 @@ const HomeScreen = ({ navigation }) => {
           });
         }}
       >
-        <Text>Move</Text>
+        <Text>Detail Page</Text>
       </Button>
-      <Text>{currentUser.uid}</Text>
-      <Text>TEST</Text>
-      <Button onPress={logout}>
+      {/* <Text>{currentUser.uid}</Text>
+      <Text>TEST</Text> */}
+      <Button style={styles.button} onPress={logout}>
         <Text>Logout</Text>
       </Button>
     </Container>
@@ -51,12 +53,10 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center'
+  },
+  button: {
+    margin: 10
   }
-  // button: {
-  //   backgroundColor: 'blue',
-  //   padding: 10,
-  //   borderRadius: 5
-  // }
 });
 
 export default HomeScreen;

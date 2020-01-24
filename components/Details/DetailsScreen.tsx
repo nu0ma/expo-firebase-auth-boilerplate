@@ -1,15 +1,17 @@
 import React from 'react';
-import { View, Text, StyleSheet, Button } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import { Text, Container, Button } from 'native-base';
 
 const DetailsScreen = ({ navigation }) => {
   const itemId = navigation.getParam('itemId', 'NO-ID');
   const otherParam = navigation.getParam('otherParam', 'NO-ID');
 
   return (
-    <View style={styles.container}>
+    <Container style={styles.container}>
       <Text>Details Screen</Text>
-      <TouchableOpacity
+      <Button
+        info
         style={styles.button}
         onPress={() => {
           navigation.push('Details', {
@@ -17,16 +19,20 @@ const DetailsScreen = ({ navigation }) => {
           });
         }}
       >
-        <Text>Go to Details ... again</Text>
-      </TouchableOpacity>
+        <Text>Change id</Text>
+      </Button>
       <Text>itemID:{JSON.stringify(itemId)}</Text>
       <Text>
         otherParam:
         {JSON.stringify(otherParam)}
       </Text>
-      <Button title="Go back" onPress={() => navigation.goBack()} />
-      <Button title="Go Top" onPress={() => navigation.popToTop()} />
-    </View>
+      <Button info style={styles.button} onPress={() => navigation.goBack()}>
+        <Text>Back</Text>
+      </Button>
+      <Button info style={styles.button} onPress={() => navigation.popToTop()}>
+        <Text>Top Page</Text>
+      </Button>
+    </Container>
   );
 };
 
@@ -37,9 +43,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   button: {
-    backgroundColor: 'blue',
-    padding: 10,
-    borderRadius: 5
+    margin: 10
   }
 });
 
