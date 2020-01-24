@@ -1,17 +1,18 @@
-import React, { useEffect, useState } from 'react';
-import { Text, StyleSheet, TextInput, View } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet } from 'react-native';
 import {
   Container,
   Button,
   Form,
   Item,
   Input,
-  Header,
-  Content
+  Content,
+  Text
 } from 'native-base';
 import firebase from '../../firebase';
-import { setUser, clearUser } from '../../reducer/actions';
+import { setUser } from '../../reducer/actions';
 import { useDispatch, useSelector } from 'react-redux';
+import { firebaseCreateUser } from '../../utils/firebaseUtils';
 
 type State = {
   user: firebase.User;
@@ -23,19 +24,8 @@ const Register = ({ navigation }) => {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [name, setName] = useState('');
   const [error, setError] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
-
-  // useEffect(() => {
-  //   firebase.auth().onAuthStateChanged(user => {
-  //     if (user) {
-  //       dispatch(setUser(user));
-  //       console.log('currentUser :', currentUser);
-  //       navigation.navigate('App');
-  //     }
-  //   });
-  // }, []);
 
   const isFormValid = () => {
     return email && password;
@@ -44,10 +34,7 @@ const Register = ({ navigation }) => {
   const handleSubmit = async () => {
     if (isFormValid()) {
       try {
-        const { user } = await firebase
-          .auth()
-          .createUserWithEmailAndPassword(email, password);
-        console.log(user);
+        const { user } = await firebaseCreateUser(email, password);
         dispatch(setUser(user));
         navigation.navigate('App');
       } catch (err) {

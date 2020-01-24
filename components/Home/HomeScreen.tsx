@@ -1,11 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { StyleSheet } from 'react-native';
 import { Container, Button, Text } from 'native-base';
 import firebase from '../../firebase';
-import Form from '../Details/Form';
-import { setUser, clearUser } from '../../reducer/actions';
-import { useDispatch, useSelector } from 'react-redux';
-import Logout from '../Logout';
+import { useSelector } from 'react-redux';
+import { firebaseLogOut } from '../../utils/firebaseUtils';
 
 type State = {
   user: firebase.User;
@@ -13,14 +11,9 @@ type State = {
 
 const HomeScreen = ({ navigation }) => {
   const currentUser = useSelector((state: State): firebase.User => state.user);
-  // const dispatch = useDispatch();
 
   const logout = () => {
-    firebase
-      .auth()
-      .signOut()
-      .then(() => console.log('error'));
-    console.log('logout');
+    firebaseLogOut();
     navigation.navigate('Auth');
   };
   return (
@@ -39,8 +32,6 @@ const HomeScreen = ({ navigation }) => {
       >
         <Text>Detail Page</Text>
       </Button>
-      {/* <Text>{currentUser.uid}</Text>
-      <Text>TEST</Text> */}
       <Button style={styles.button} onPress={logout}>
         <Text>Logout</Text>
       </Button>

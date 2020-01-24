@@ -1,16 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { StyleSheet } from 'react-native';
-import {
-  Container,
-  Button,
-  Form,
-  Input,
-  Item,
-  Card,
-  Text,
-  CardItem,
-  Body
-} from 'native-base';
+import { Container, Button, Form, Input, Item, Text } from 'native-base';
 import firebase from '../../firebase';
 import { setUser, clearUser } from '../../reducer/actions';
 import { useDispatch, useSelector } from 'react-redux';
@@ -61,18 +51,6 @@ const Login = ({ navigation }) => {
       }
     }
   };
-
-  // const handleError = () => {
-  //   if (error === '') {
-  //     return <></>;
-  //   } else {
-  //     return (
-  //       <Card>
-  //         <Text>{error}</Text>
-  //       </Card>
-  //     );
-  //   }
-  // };
 
   return (
     <Container>
